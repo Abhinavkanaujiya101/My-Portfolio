@@ -1,0 +1,439 @@
+/* Hand-Drawn Sketch Portfolio Design System */
+
+:root {
+  --color-bg: #FBF9F1;      /* Cream background */
+  --color-ink: #1A1A1A;     /* Dark gray/black ink */
+  --color-grid: rgba(26, 26, 26, 0.04); /* Subtly visible sketchpad grid */
+  --font-hand: 'Architects Daughter', 'Kalam', cursive;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  
+  --sketch-border-width: 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  /* Sketchbook graph paper style */
+  background-image: 
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-hand);
+  margin: 0;
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* Core sketch elements */
+
+/* sketch-box creates a hand-drawn border effect on an absolute pseudo-element so that inner text remains clear and readable. */
+.sketch-box {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  background: transparent;
+  display: block;
+}
+
+.sketch-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: var(--sketch-border-width) solid var(--color-ink);
+  border-radius: 4px 8px 3px 6px / 6px 3px 8px 4px; /* irregular radius simulates hand-sketching */
+  background-color: var(--box-bg, transparent);
+  pointer-events: none;
+  filter: url(#sketch-medium);
+  z-index: -1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Outline variations */
+.sketch-box.sketch-subtle::before {
+  filter: url(#sketch-subtle);
+  border-width: 1.8px;
+}
+
+.sketch-box.sketch-strong::before {
+  filter: url(#sketch-strong);
+  border-width: 3px;
+  border-radius: 5px 12px 6px 10px / 8px 5px 12px 6px;
+}
+
+/* Interactive elements */
+.sketch-card {
+  transition: transform 0.2s ease;
+}
+
+.sketch-card::before {
+  box-shadow: 4px 4px 0px var(--color-ink);
+}
+
+.sketch-card:hover {
+  transform: translate(-2px, -2px);
+}
+
+.sketch-card:hover::before {
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.sketch-card:active {
+  transform: translate(2px, 2px);
+}
+
+.sketch-card:active::before {
+  box-shadow: 2px 2px 0px var(--color-ink);
+}
+
+/* Sketch buttons */
+.sketch-btn {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.1s ease;
+}
+
+.sketch-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2.5px solid var(--color-ink);
+  background-color: var(--box-bg, #FBF9F1);
+  border-radius: 6px 3px 5px 4px / 4px 6px 3px 5px;
+  box-shadow: 4px 4px 0px var(--color-ink);
+  pointer-events: none;
+  filter: url(#sketch-medium);
+  z-index: -1;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.sketch-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+.sketch-btn:hover::before {
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.sketch-btn:active {
+  transform: translate(2px, 2px);
+}
+
+.sketch-btn:active::before {
+  box-shadow: 1px 1px 0px var(--color-ink);
+}
+
+/* Hatching backgrounds */
+.hatch-bg {
+  /* Subtle light hatching shader */
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(26, 26, 26, 0.12) 8px,
+    rgba(26, 26, 26, 0.12) 9px
+  ) !important;
+}
+
+.hatch-bg-active {
+  /* Denser active hatching shader */
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    rgba(26, 26, 26, 0.25) 5px,
+    rgba(26, 26, 26, 0.25) 6.5px
+  ) !important;
+}
+
+.hatch-fill {
+  /* Dark full sketch fills for loaders or progress bars */
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-ink) 0px,
+    var(--color-ink) 2px,
+    transparent 2px,
+    transparent 8px
+  ) !important;
+}
+
+/* Wireframe "X" placeholders */
+.sketch-placeholder-x {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(26, 26, 26, 0.02);
+  min-height: 150px;
+}
+
+.sketch-placeholder-x::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1.5px solid rgba(26, 26, 26, 0.1);
+  filter: url(#sketch-subtle);
+  pointer-events: none;
+}
+
+.sketch-placeholder-x::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  border-top: 1.5px solid rgba(26, 26, 26, 0.15);
+  border-bottom: 1.5px solid rgba(26, 26, 26, 0.15);
+  transform: rotate(45deg);
+  transform-origin: top left;
+  filter: url(#sketch-medium);
+  pointer-events: none;
+}
+
+/* Hand-drawn arrow banner styling */
+.sketch-arrow-banner {
+  font-family: var(--font-hand);
+  position: relative;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sketch-arrow-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--color-ink);
+  background-color: var(--box-bg, #FBF9F1);
+  /* Forms a banner chevron on the right side */
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+  filter: url(#sketch-medium);
+  z-index: -1;
+}
+
+.sketch-arrow-banner:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* Checkmarks and Custom Lists */
+.sketch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sketch-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+}
+
+.sketch-list-check::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-hand);
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--color-ink);
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* Sketchy input fields */
+.sketch-input {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  padding: 0.8rem 1rem;
+  margin-top: 0.4rem;
+  position: relative;
+  color: var(--color-ink);
+  outline: none;
+}
+
+.sketch-input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.sketch-input-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--color-ink);
+  border-radius: 4px;
+  pointer-events: none;
+  filter: url(#sketch-medium);
+  z-index: 0;
+  background: transparent;
+}
+
+.sketch-input-container:focus-within::before {
+  border-width: 2.5px;
+  box-shadow: 2px 2px 0px var(--color-ink);
+}
+
+.sketch-label {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* Progress bar hatching */
+.sketch-progress-container {
+  height: 24px;
+  position: relative;
+  border: 2px solid var(--color-ink);
+  border-radius: 4px;
+  background: rgba(26, 26, 26, 0.02);
+  filter: url(#sketch-subtle);
+  overflow: hidden;
+}
+
+.sketch-progress-bar {
+  height: 100%;
+  border-right: 2px solid var(--color-ink);
+  transition: width 0.8s ease-in-out;
+}
+
+/* Wiggle animation (boiling/hand-drawn wiggle) */
+@keyframes sketch-wiggle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(0.5px, 0.5px) rotate(0.1deg);
+  }
+  50% {
+    transform: translate(-0.5px, 0.5px) rotate(-0.1deg);
+  }
+  75% {
+    transform: translate(0.5px, -0.5px) rotate(0.1deg);
+  }
+}
+
+.wiggle-hover:hover {
+  animation: sketch-wiggle 0.3s infinite alternate;
+}
+
+.wiggle-always {
+  animation: sketch-wiggle 0.4s infinite alternate;
+}
+
+/* Custom Scrollbar styled for sketchpad */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: 2px solid var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg);
+  border: 2px solid var(--color-ink);
+  border-radius: 4px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    var(--color-ink) 4px,
+    var(--color-ink) 5px
+  );
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(26, 26, 26, 0.1);
+}
+
+/* Utility layout styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
