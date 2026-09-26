@@ -15,12 +15,20 @@ function App() {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        position: 'relative',
       }}>
-        {/* Navigation header */}
+        {/* Ambient Dark Mesh Background Layer */}
+        <div className="ambient-glow-wrapper" aria-hidden="true">
+          <div className="ambient-orb ambient-orb-1" />
+          <div className="ambient-orb ambient-orb-2" />
+          <div className="ambient-orb ambient-orb-3" />
+        </div>
+
+        {/* Floating Frosted Glass Header */}
         <Header />
         
         {/* Main Content Area */}
-        <main style={{ flex: 1, paddingBottom: '3rem' }}>
+        <main style={{ flex: 1, paddingBottom: '4rem', position: 'relative', zIndex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -32,7 +40,7 @@ function App() {
           </Routes>
         </main>
 
-        {/* Footer */}
+        {/* Modern Glass Footer */}
         <Footer />
       </div>
     </Router>

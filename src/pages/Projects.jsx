@@ -9,111 +9,148 @@ export default function Projects() {
   const projectsData = [
     {
       id: 1,
-      title: "Secure One-Time Chat Application",
-      category: "Full-Stack Web Application",
-      description: "Developed a secure real-time chat application with unique 6-digit access codes that become invalid after first use. Built a full-stack solution implementing one-time authentication, real-time messaging, and room management to ensure extreme transmission privacy.",
-      techStack: ["Node.js", "Express", "React", "Socket.io", "One-Time Auth"],
-      repoUrl: "https://github.com/Abhinavkanaujiya101",
-      liveUrl: null
+      title: "Full-Stack Secure Chat Application",
+      category: "Full-Stack Web App",
+      description: "A real-time chat application built with a Node.js backend and a React frontend interface. Features instant messaging powered by Socket.io, Gmail SMTP Nodemailer OTP verification for secure user authentication, responsive design for desktop and mobile, and a decoupled dual architecture.",
+      techStack: ["React.js", "Node.js", "Express", "Socket.io", "Nodemailer", "Gmail SMTP"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/Secure-chat-app",
+      liveUrl: null,
+      icon: "💬",
     },
     {
       id: 2,
-      title: "Dragon Towards Pointer",
-      category: "2D Interactive Game",
-      description: "A 2D interactive game built using JavaScript and Python. Designed game logic, physics computations, and canvas-based animations to enhance user interaction. Implemented efficient event-handling and responsive keyboard controls for smooth gameplay loop.",
-      techStack: ["JavaScript", "Python", "HTML5 Canvas", "Game Physics", "Event Handling"],
-      repoUrl: "https://github.com/Abhinavkanaujiya101",
-      liveUrl: null
+      title: "OmniBridge 🌉",
+      category: "AI Gateway Platform",
+      description: "High-performance, real-time AI orchestration gateway designed to bridge multi-provider LLM and generative model APIs (Google Gemini, OpenAI, Together AI, Luma Dream Machine) into a unified, low-latency streaming pipeline with PostgreSQL/Supabase persistence and dynamic telemetry dashboarding.",
+      techStack: ["Node.js", "Express", "Next.js", "WebSockets", "Gemini API", "OpenAI", "Supabase"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/OmniBridge",
+      liveUrl: null,
+      icon: "🌉",
+    },
+    {
+      id: 3,
+      title: "Desktop Assistant",
+      category: "System Automation Utility",
+      description: "An automated Python desktop assistant designed to perform basic and essential system tasks directly on your local screen. Features local screen automation, application launching, command processing, and desktop productivity task execution.",
+      techStack: ["Python", "OS Automation", "Desktop Scripts", "System APIs"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/Desktop-Assistant",
+      liveUrl: null,
+      icon: "🤖",
+    },
+    {
+      id: 4,
+      title: "My Extension",
+      category: "Browser Extension & Dashboard",
+      description: "A high-performance glassmorphic dashboard extension built for Chrome and Edge. Features real-time power analytics, system CPU monitoring, glassmorphism UI styling, and customized web productivity utilities.",
+      techStack: ["JavaScript", "Chrome Extension API", "CSS3 Glassmorphism", "HTML5", "System Metrics"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/My-Extension",
+      liveUrl: null,
+      icon: "⚡",
     }
   ];
 
   return (
-    <div className="container" style={{ padding: '3rem 1.5rem' }}>
-      <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem' }}>
-        🎨 Project Blueprints
-      </h2>
-      <p style={{ 
-        textAlign: 'center', 
-        fontSize: '1.05rem', 
-        maxWidth: '650px', 
-        margin: '0 auto 3rem',
-        fontFamily: 'var(--font-mono)'
-      }}>
-        A grid of layouts mapping out my coding accomplishments. Hover over cards to see wireframe highlights and click details to open the sketch panels.
-      </p>
+    <div className="container" style={{ paddingTop: '3rem' }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '3.5rem' }} className="fade-in">
+        <div className="glass-pill" style={{ marginBottom: '1rem', color: 'var(--accent-purple)', borderColor: 'rgba(139, 92, 246, 0.3)' }}>
+          Portfolio Showcase
+        </div>
+        <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', fontWeight: '800', color: '#FFFFFF' }}>
+          Featured <span className="text-gradient">Projects</span>
+        </h1>
+        <p style={{ maxWidth: '600px', margin: '0.5rem auto 0', color: 'var(--text-secondary)' }}>
+          A curated collection of full-stack web applications, AI gateways, desktop utilities, and browser tools.
+        </p>
+      </div>
 
-      {/* Grid of Projects */}
-      <div className="grid grid-cols-2">
+      {/* Projects Grid */}
+      <div className="grid grid-cols-2" style={{ marginBottom: '4rem' }}>
         {projectsData.map((project) => (
           <SketchCard 
             key={project.id}
-            variant="medium"
+            hoverable={true}
             style={{ 
-              '--box-bg': '#FFF', 
-              padding: '1.5rem',
+              padding: '2rem',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              transform: project.id % 2 === 0 ? 'rotate(0.5deg)' : 'rotate(-0.5deg)'
             }}
           >
             <div>
-              {/* Category tag */}
-              <div style={{ 
-                fontFamily: 'var(--font-mono)', 
-                fontSize: '0.75rem', 
-                opacity: 0.7, 
-                textTransform: 'uppercase', 
-                marginBottom: '0.4rem',
-                letterSpacing: '1px'
-              }}>
-                [ {project.category} ]
+              {/* Top Meta Row */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+                <span className="glass-pill" style={{ fontSize: '0.78rem' }}>
+                  {project.category}
+                </span>
+                <span style={{ fontSize: '1.5rem' }}>{project.icon}</span>
               </div>
 
               {/* Title */}
-              <h3 style={{ fontSize: '1.6rem', fontFamily: 'var(--font-hand)', marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: '1.45rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.75rem' }}>
                 {project.title}
-              </h3>
+              </h2>
 
-              {/* Wireframe Placeholder Image (X frame box) */}
-              <div className="sketch-placeholder-x mb-4 flex-center">
-                <span style={{ 
-                  fontFamily: 'var(--font-hand)', 
-                  fontSize: '1.2rem', 
-                  color: 'rgba(26, 26, 26, 0.25)', 
-                  transform: 'rotate(-5deg)',
-                  zIndex: 2
-                }}>
-                  [ Wireframe Image Placeholder ]
-                </span>
-              </div>
-
-              {/* Brief Intro */}
+              {/* Description */}
               <p style={{ 
-                fontFamily: 'var(--font-mono)', 
-                fontSize: '0.85rem', 
-                lineHeight: '1.5', 
+                fontSize: '0.92rem', 
+                lineHeight: '1.6', 
+                color: 'var(--text-secondary)',
                 marginBottom: '1.5rem',
-                opacity: 0.9 
               }}>
-                {project.description.slice(0, 120)}...
+                {project.description}
               </p>
+
+              {/* Tech Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem', marginBottom: '1.75rem' }}>
+                {project.techStack.map((tech, idx) => (
+                  <span 
+                    key={idx} 
+                    style={{
+                      fontSize: '0.78rem',
+                      fontFamily: 'var(--font-mono)',
+                      background: 'rgba(255, 255, 255, 0.04)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      padding: '0.25rem 0.6rem',
+                      borderRadius: '6px',
+                      color: 'var(--text-bright)',
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            {/* View Details Button */}
-            <div style={{ marginTop: 'auto' }}>
+            {/* Bottom Actions */}
+            <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'auto' }}>
               <SketchButton 
                 onClick={() => setSelectedProject(project)}
-                style={{ width: '100%', '--box-bg': '#F0E6FF', justifyContent: 'center' }}
+                variant="primary"
+                style={{ flex: 1, padding: '0.65rem 1rem', fontSize: '0.9rem' }}
               >
-                🔍 VIEW DETAILS
+                Architecture & Details ↗
               </SketchButton>
+              {project.repoUrl && (
+                <a 
+                  href={project.repoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="glass-btn"
+                  style={{ padding: '0.65rem 1rem' }}
+                  aria-label={`View ${project.title} repository`}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                  </svg>
+                </a>
+              )}
             </div>
           </SketchCard>
         ))}
       </div>
 
-      {/* Project Details Modal */}
+      {/* Project Modal Dialog */}
       {selectedProject && (
         <ProjectModal 
           project={selectedProject} 

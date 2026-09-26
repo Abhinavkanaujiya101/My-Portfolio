@@ -2,145 +2,233 @@ import React from 'react';
 import SketchCard from '../components/SketchCard';
 
 export default function About() {
+  const accomplishments = [
+    { title: "B.Tech in CSE", desc: "Pranveer Singh Institute of Technology, Kanpur (CGPA: 7.7)", icon: "🎓" },
+    { title: "Oracle Certified Cloud Associate", desc: "Oracle Cloud Infrastructure (OCI) Foundations", icon: "☁️" },
+    { title: "Oracle Certified GenAI Associate", desc: "Generative AI Foundations & Architecture", icon: "🧠" },
+    { title: "HackerRank 3★ Badges", desc: "Problem Solving & C++ Language Mastery", icon: "⭐" },
+    { title: "LeetCode 150+ Problems", desc: "Optimized solutions across DSA, arrays, trees & dynamic programming", icon: "⚡" },
+  ];
+
+  const education = [
+    {
+      degree: "Bachelor of Technology in Computer Science & Engineering",
+      institution: "Pranveer Singh Institute of Technology (PSIT), Kanpur",
+      period: "2024 — Present",
+      grade: "CGPA: 7.7",
+      details: "Focused on Data Structures, Algorithms, Object-Oriented Programming, and Computer Systems Architecture."
+    },
+    {
+      degree: "Senior Secondary Education (Class XII)",
+      institution: "S.S Inter College, UP Board",
+      period: "Completed 2024",
+      grade: "Score: 81%",
+      details: "Science stream with specialization in Mathematics and Physics."
+    },
+    {
+      degree: "Secondary Education (Class X)",
+      institution: "S.S Inter College, UP Board",
+      period: "Completed 2022",
+      grade: "Score: 83%",
+      details: "Foundation in science, mathematics, and analytical reasoning."
+    }
+  ];
+
   return (
-    <div className="container" style={{ padding: '3rem 1.5rem' }}>
-      <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '2.5rem' }}>
-        📖 Profile & Objective
-      </h2>
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2.5rem', alignItems: 'start' }} className="about-grid">
-        {/* Left Side: Avatar Card */}
-        <div style={{ textAlign: 'center' }}>
-          <SketchCard variant="strong" hoverable={true} style={{ padding: '2rem 1.5rem', '--box-bg': '#FFF' }}>
-            <div 
-              className="hatch-bg flex-center"
-              style={{ 
-                width: '140px',
-                height: '140px',
-                borderRadius: '50%',
-                border: '3px solid var(--color-ink)',
-                filter: 'url(#sketch-strong)',
-                margin: '0 auto 1.5rem',
-                backgroundColor: '#FFF'
-              }}
-            >
-              <svg viewBox="0 0 100 100" width="90" height="90" stroke="var(--color-ink)" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(-3deg)' }}>
-                {/* Hair/Head sketch */}
-                <circle cx="50" cy="42" r="16" fill="#FFF" />
-                <path d="M 32 38 C 34 22, 66 22, 68 38" strokeWidth="4" />
-                {/* Glasses */}
-                <rect x="37" y="38" width="10" height="8" rx="1" />
-                <rect x="53" y="38" width="10" height="8" rx="1" />
-                <path d="M 47 42 L 53 42" />
-                {/* Smile */}
-                <path d="M 45 49 Q 50 54, 55 49" />
-                {/* Body sketch */}
-                <path d="M 22 88 C 25 70, 35 66, 50 66 C 65 66, 75 70, 78 88" fill="#FFF" />
-                {/* Neck */}
-                <path d="M 46 58 L 46 66 M 54 58 L 54 66" />
-              </svg>
-            </div>
-            
-            <h3 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-hand)', marginBottom: '0.3rem' }}>Abhinav Kanaujiya</h3>
-            <p style={{ fontSize: '0.85rem', fontFamily: 'var(--font-mono)', opacity: 0.8 }}>
-              CS Student & Developer
-            </p>
-            <p style={{ fontSize: '0.85rem', fontFamily: 'var(--font-mono)', opacity: 0.8, marginTop: '0.2rem' }}>
-              📍 PSIT, Kanpur
-            </p>
-          </SketchCard>
+    <div className="container" style={{ paddingTop: '3rem' }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '3.5rem' }} className="fade-in">
+        <div className="glass-pill" style={{ marginBottom: '1rem', color: 'var(--accent-purple)', borderColor: 'rgba(139, 92, 246, 0.3)' }}>
+          Profile & Background
         </div>
+        <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', fontWeight: '800', color: '#FFFFFF' }}>
+          About <span className="text-gradient">Me</span>
+        </h1>
+        <p style={{ maxWidth: '600px', margin: '0.5rem auto 0', color: 'var(--text-secondary)' }}>
+          Passionate software engineer and computer science undergraduate dedicated to building robust and performant software solutions.
+        </p>
+      </div>
 
-        {/* Right Side: Objective & Bio Details */}
-        <div>
-          <SketchCard variant="medium" hoverable={false} style={{ padding: '2rem', '--box-bg': '#FFF' }}>
-            <h3 style={{ fontSize: '1.6rem', fontFamily: 'var(--font-hand)', marginBottom: '1rem', borderBottom: '2px dashed var(--color-ink)', paddingBottom: '0.5rem' }}>
+      {/* Main Grid: Profile Card & Objective */}
+      <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '2rem', alignItems: 'start', marginBottom: '3.5rem' }} className="about-grid">
+        {/* Left Side: Avatar Card */}
+        <SketchCard glow={true} style={{ padding: '2.25rem 1.75rem', textAlign: 'center' }}>
+          <div style={{ position: 'relative', width: '130px', height: '130px', margin: '0 auto 1.5rem' }}>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(56, 189, 248, 0.4) 100%)',
+              border: '2px solid rgba(165, 180, 252, 0.5)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '2.75rem',
+              boxShadow: '0 0 25px rgba(99, 102, 241, 0.35)',
+            }}>
+              👨‍💻
+            </div>
+            <div style={{
+              position: 'absolute',
+              bottom: '4px',
+              right: '4px',
+              width: '24px',
+              height: '24px',
+              borderRadius: '50%',
+              background: '#0B0F19',
+              border: '2px solid #10B981',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.65rem',
+            }}>
+              ⚡
+            </div>
+          </div>
+
+          <h2 style={{ fontSize: '1.45rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.25rem' }}>
+            Abhinav Kanaujiya
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', marginBottom: '0.75rem' }}>
+            CS Student & Software Engineer
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            <div>📍 Kanpur, Uttar Pradesh, India</div>
+            <div>🏫 PSIT Kanpur</div>
+          </div>
+        </SketchCard>
+
+        {/* Right Side: Objective & Accomplishments */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <SketchCard style={{ padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', marginBottom: '0.85rem', fontWeight: '700' }}>
               Professional Objective
             </h3>
-            <p style={{ lineHeight: '1.7', fontFamily: 'var(--font-mono)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-              Motivated and detail-oriented Computer Science student with a strong foundation in C, C++, and Object-Oriented Programming (OOP). Skilled in applying Data Structures and Algorithms (DSA) to build efficient and optimized solutions. Eager to contribute technical expertise to core system development and software engineering projects.
+            <p style={{ lineHeight: '1.75', fontSize: '0.96rem', color: 'var(--text-secondary)' }}>
+              Motivated and detail-oriented Computer Science student with a strong foundation in <strong style={{ color: '#FFF' }}>C, C++, and Object-Oriented Programming (OOP)</strong>. Skilled in applying Data Structures and Algorithms (DSA) to build efficient and optimized computational solutions. Eager to contribute technical expertise to core system development and software engineering projects.
             </p>
+          </SketchCard>
 
-            <h3 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-hand)', marginBottom: '0.8rem' }}>
-              Key Accomplishments
+          <SketchCard style={{ padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', marginBottom: '1.25rem', fontWeight: '700' }}>
+              Key Accomplishments & Credentials
             </h3>
-            <ul className="sketch-list">
-              <li className="sketch-list-check"><strong>B.Tech in CSE</strong>: Currently pursuing at Pranveer Singh Institute of Technology, Kanpur (CGPA: 7.7).</li>
-              <li className="sketch-list-check"><strong>Oracle Certified</strong>: Foundations Associate (Cloud Infrastructure) & Generative AI Certified Associate.</li>
-              <li className="sketch-list-check"><strong>HackerRank Badges</strong>: 3★ Badge in Problem Solving and 3★ Badge in C++ Language.</li>
-              <li className="sketch-list-check"><strong>Problem Solving</strong>: Solved 150+ algorithmic questions on LeetCode.</li>
-            </ul>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+              {accomplishments.map((item, idx) => (
+                <div 
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    padding: '0.75rem 1rem',
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid var(--glass-border)',
+                    borderRadius: 'var(--radius-sm)',
+                  }}
+                >
+                  <span style={{ fontSize: '1.25rem' }}>{item.icon}</span>
+                  <div>
+                    <strong style={{ color: '#FFFFFF', fontSize: '0.92rem', display: 'block' }}>{item.title}</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>{item.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </SketchCard>
         </div>
       </div>
 
-      {/* Stats Summary Section */}
-      <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-hand)', textAlign: 'center', marginTop: '4rem', marginBottom: '1.5rem' }}>
-        ✐ Core Stats & Metrics
-      </h3>
-      
-      <div className="grid grid-cols-3">
-        <SketchCard variant="subtle" style={{ textAlign: 'center', '--box-bg': '#FFF' }}>
-          <h4 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-hand)', fontWeight: 'bold' }}>7.7</h4>
-          <p style={{ fontSize: '0.9rem', fontFamily: 'var(--font-mono)', opacity: 0.9 }}>B.Tech CGPA</p>
-          <div className="hatch-bg" style={{ height: '8px', border: '1.5px solid var(--color-ink)', marginTop: '0.8rem', borderRadius: '3px' }} />
-        </SketchCard>
+      {/* Metrics Counter Section */}
+      <div style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontSize: '1.5rem', textAlign: 'center', color: '#FFFFFF', marginBottom: '1.75rem', fontWeight: '700' }}>
+          Performance Metrics
+        </h2>
+        <div className="grid grid-cols-3">
+          <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
+            <div style={{
+              fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
+              fontWeight: '800',
+              fontFamily: 'var(--font-sans)',
+              background: 'var(--grad-primary)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: '1.1',
+              marginBottom: '0.5rem',
+            }}>
+              7.7
+            </div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>B.Tech CGPA</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Computer Science & Eng.</div>
+          </SketchCard>
 
-        <SketchCard variant="subtle" style={{ textAlign: 'center', '--box-bg': '#FFF' }}>
-          <h4 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-hand)', fontWeight: 'bold' }}>150+</h4>
-          <p style={{ fontSize: '0.9rem', fontFamily: 'var(--font-mono)', opacity: 0.9 }}>LeetCode Solved</p>
-          <div className="hatch-bg" style={{ height: '8px', border: '1.5px solid var(--color-ink)', marginTop: '0.8rem', borderRadius: '3px' }} />
-        </SketchCard>
+          <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
+            <div style={{
+              fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
+              fontWeight: '800',
+              fontFamily: 'var(--font-sans)',
+              background: 'var(--grad-cyan-blue)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: '1.1',
+              marginBottom: '0.5rem',
+            }}>
+              150+
+            </div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>LeetCode Solved</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Data Structures & Algorithms</div>
+          </SketchCard>
 
-        <SketchCard variant="subtle" style={{ textAlign: 'center', '--box-bg': '#FFF' }}>
-          <h4 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-hand)', fontWeight: 'bold' }}>2</h4>
-          <p style={{ fontSize: '0.9rem', fontFamily: 'var(--font-mono)', opacity: 0.9 }}>Oracle Cloud Certs</p>
-          <div className="hatch-bg" style={{ height: '8px', border: '1.5px solid var(--color-ink)', marginTop: '0.8rem', borderRadius: '3px' }} />
-        </SketchCard>
+          <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
+            <div style={{
+              fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
+              fontWeight: '800',
+              fontFamily: 'var(--font-sans)',
+              background: 'var(--grad-violet-emerald)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: '1.1',
+              marginBottom: '0.5rem',
+            }}>
+              2x
+            </div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>Oracle Certified</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Cloud & Generative AI</div>
+          </SketchCard>
+        </div>
       </div>
 
-      {/* Educational Timelines */}
-      <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-hand)', textAlign: 'center', marginTop: '4rem', marginBottom: '1.5rem' }}>
-        ✐ Academic Details
-      </h3>
+      {/* Educational Milestones Timeline */}
+      <div style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontSize: '1.5rem', textAlign: 'center', color: '#FFFFFF', marginBottom: '2rem', fontWeight: '700' }}>
+          Academic Journey
+        </h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        <SketchCard variant="subtle" hoverable={false} style={{ '--box-bg': '#FFF', padding: '1.2rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', fontFamily: 'var(--font-hand)' }}>
-            <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Bachelor of Technology in Computer Science and Engineering</h4>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem' }}>[ Current ]</span>
-          </div>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginTop: '0.4rem' }}>
-            Pranveer Singh Institute of Technology, Kanpur | CGPA: 7.7
-          </p>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', opacity: 0.8 }}>
-            Relevant Coursework: Data Structures, Algorithms.
-          </p>
-        </SketchCard>
-
-        <SketchCard variant="subtle" hoverable={false} style={{ '--box-bg': '#FFF', padding: '1.2rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', fontFamily: 'var(--font-hand)' }}>
-            <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Senior Secondary (Class XII)</h4>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem' }}>[ 2024 ]</span>
-          </div>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginTop: '0.4rem' }}>
-            S.S Inter College, UP Board | Score: 81%
-          </p>
-        </SketchCard>
-
-        <SketchCard variant="subtle" hoverable={false} style={{ '--box-bg': '#FFF', padding: '1.2rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', fontFamily: 'var(--font-hand)' }}>
-            <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Secondary (Class X)</h4>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem' }}>[ 2022 ]</span>
-          </div>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginTop: '0.4rem' }}>
-            S.S Inter College, UP Board | Score: 83%
-          </p>
-        </SketchCard>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          {education.map((edu, idx) => (
+            <SketchCard key={idx} hoverable={false} style={{ padding: '1.75rem 2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.15rem', color: '#FFFFFF', fontWeight: '700' }}>
+                  {edu.degree}
+                </h3>
+                <span className="glass-pill" style={{ color: 'var(--accent-cyan)', borderColor: 'rgba(56, 189, 248, 0.3)' }}>
+                  {edu.period}
+                </span>
+              </div>
+              <p style={{ color: 'var(--text-bright)', fontSize: '0.92rem', marginBottom: '0.4rem', fontWeight: '500' }}>
+                {edu.institution} • <span style={{ color: 'var(--accent-emerald)' }}>{edu.grade}</span>
+              </p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.5', margin: 0 }}>
+                {edu.details}
+              </p>
+            </SketchCard>
+          ))}
+        </div>
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
           .about-grid {
             grid-template-columns: 1fr !important;
           }

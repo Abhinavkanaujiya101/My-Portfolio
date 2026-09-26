@@ -1,11 +1,26 @@
 import React from 'react';
 
-export default function SketchButton({ children, onClick, className = '', type = 'button', ...props }) {
+export default function SketchButton({ 
+  children, 
+  onClick, 
+  className = '', 
+  variant = 'default',
+  type = 'button', 
+  style = {},
+  ...props 
+}) {
+  const variantClass = variant === 'primary' 
+    ? 'glass-btn-primary' 
+    : variant === 'glow' 
+    ? 'glass-btn-glow' 
+    : '';
+
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`sketch-btn wiggle-hover ${className}`}
+      className={`glass-btn ${variantClass} ${className}`}
+      style={style}
       {...props}
     >
       {children}
