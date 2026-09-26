@@ -38,7 +38,7 @@ export default function Skills() {
       icon: "⚡",
       accentColor: "#34D399",
       skills: [
-        { name: "Problem Solving & Analytical Logic", level: 92 },
+        { name: "Problem Solving (3★ HackerRank Badge)", level: 92 },
         { name: "Oracle Cloud Infrastructure (OCI)", level: 82 },
         { name: "Generative AI Foundations", level: 80 },
       ]

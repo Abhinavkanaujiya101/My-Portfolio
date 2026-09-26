@@ -1,47 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SketchCard from '../components/SketchCard';
 import SketchButton from '../components/SketchButton';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('cpp');
-
-  const codeSnippets = {
-    cpp: `// High-Performance Algorithm in C++
+  const profileCppCode = `// abhinav@engine - profile.cpp
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
 
-template <typename T>
-class Solution {
+class AbhinavKanaujiya {
+private:
+    std::string role = "B.Tech CSE @ PSIT Kanpur";
+    std::string focus = "Full-Stack & AI Systems";
+
 public:
-    int binarySearch(const std::vector<T>& arr, T target) {
-        int left = 0, right = arr.size() - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (arr[mid] == target) return mid;
-            if (arr[mid] < target) left = mid + 1;
-            else right = mid - 1;
-        }
-        return -1;
+    void getIntroduction() {
+        std::cout << "Name: Abhinav Kanaujiya\\n";
+        std::cout << "Role: " << role << "\\n";
+        std::cout << "Core: C++, DSA, React, Node.js\\n";
+        std::cout << "Projects: Apex OS, OmniBridge\\n";
     }
-};`,
-    system: `// System Architecture & Node Gateway
-const express = require('express');
-const { createServer } = require('http');
-const { Server } = require('socket.io');
+};
 
-const app = express();
-const server = createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
-
-io.on("connection", (socket) => {
-  console.log("⚡ Secure client connected:", socket.id);
-  socket.on("stream_query", async (payload) => {
-    // Real-time AI pipeline telemetry
-  });
-});`,
-  };
+int main() {
+    AbhinavKanaujiya dev;
+    dev.getIntroduction();
+    return 0;
+}`;
 
   return (
     <div className="container" style={{ paddingTop: '3.5rem' }}>
@@ -121,46 +106,14 @@ io.on("connection", (socket) => {
                 fontFamily: 'var(--font-mono)', 
                 marginLeft: '0.5rem',
               }}>
-                abhinav@engine ~ {activeTab === 'cpp' ? 'algorithm.cpp' : 'gateway.js'}
+                abhinav@engine ~ profile.cpp
               </span>
             </div>
 
-            {/* Language Switcher Tabs */}
-            <div style={{ display: 'flex', gap: '0.4rem' }}>
-              <button
-                onClick={() => setActiveTab('cpp')}
-                style={{
-                  background: activeTab === 'cpp' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
-                  border: '1px solid',
-                  borderColor: activeTab === 'cpp' ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
-                  color: activeTab === 'cpp' ? '#FFFFFF' : 'var(--text-muted)',
-                  borderRadius: '6px',
-                  padding: '0.25rem 0.65rem',
-                  fontSize: '0.75rem',
-                  fontFamily: 'var(--font-mono)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                }}
-              >
-                C++ (DSA)
-              </button>
-              <button
-                onClick={() => setActiveTab('system')}
-                style={{
-                  background: activeTab === 'system' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
-                  border: '1px solid',
-                  borderColor: activeTab === 'system' ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
-                  color: activeTab === 'system' ? '#FFFFFF' : 'var(--text-muted)',
-                  borderRadius: '6px',
-                  padding: '0.25rem 0.65rem',
-                  fontSize: '0.75rem',
-                  fontFamily: 'var(--font-mono)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                }}
-              >
-                Node / Gateway
-              </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span className="glass-pill" style={{ fontSize: '0.74rem', padding: '0.2rem 0.65rem', color: 'var(--accent-cyan)', borderColor: 'rgba(56, 189, 248, 0.3)' }}>
+                C++20
+              </span>
             </div>
           </div>
 
@@ -174,7 +127,7 @@ io.on("connection", (socket) => {
               color: '#E2E8F0',
               overflowX: 'auto',
             }}>
-              <code>{codeSnippets[activeTab]}</code>
+              <code>{profileCppCode}</code>
             </pre>
           </div>
         </div>

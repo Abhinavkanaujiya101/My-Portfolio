@@ -3,7 +3,8 @@ import SketchCard from '../components/SketchCard';
 
 export default function About() {
   const accomplishments = [
-    { title: "HackerRank 5★ C++ Badge", desc: "5-Star Gold Badge in C++ Language Mastery & Problem Solving", icon: "⭐" },
+    { title: "HackerRank 5★ C++ Badge", desc: "5-Star Gold Badge in C++ Language Mastery & Systems", icon: "⭐" },
+    { title: "HackerRank 3★ Problem Solving Badge", desc: "3-Star Badge in Algorithmic Problem Solving & Data Structures", icon: "🌟" },
     { title: "Oracle Certified Cloud Associate", desc: "Oracle Cloud Infrastructure (OCI) Foundations", icon: "☁️" },
     { title: "Oracle Certified GenAI Associate", desc: "Generative AI Foundations & Architecture", icon: "🧠" },
     { title: "LeetCode 150+ Problems", desc: "Optimized solutions across DSA, arrays, trees & dynamic programming", icon: "⚡" },
@@ -156,10 +157,10 @@ export default function About() {
               lineHeight: '1.1',
               marginBottom: '0.5rem',
             }}>
-              5★
+              5★ & 3★
             </div>
-            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>C++ HackerRank</div>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>5-Star Gold Badge</div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>HackerRank Badges</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>5★ C++ & 3★ Problem Solving</div>
           </SketchCard>
 
           <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
