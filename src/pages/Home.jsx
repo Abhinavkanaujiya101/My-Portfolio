@@ -256,7 +256,7 @@ io.on("connection", (socket) => {
             </div>
             <h3 style={{ fontSize: '1.15rem', color: '#FFFFFF', marginBottom: '0.5rem' }}>Projects</h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
-              Full-Stack Secure Chat, OmniBridge AI, and Desktop Utilities.
+              Full-Stack Secure Chat, OmniBridge AI, GitBoy, and AlphaForge.
             </p>
           </SketchCard>
         </Link>

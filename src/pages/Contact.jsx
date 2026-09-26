@@ -35,12 +35,12 @@ export default function Contact() {
 
       {/* Direct Contact Cards Grid */}
       <div className="grid grid-cols-3" style={{ marginBottom: '2.5rem' }}>
-        <a href="mailto:2k24.cs1a.2411680@gmail.com" style={{ textDecoration: 'none' }}>
+        <a href="mailto:abhinavkanaujia101@gmail.com" style={{ textDecoration: 'none' }}>
           <SketchCard style={{ padding: '1.5rem', textAlign: 'center', height: '100%' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>✉️</div>
             <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.92rem' }}>Email</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '0.78rem', marginTop: '0.2rem', wordBreak: 'break-all' }}>
-              2k24.cs1a.2411680@gmail.com
+              abhinavkanaujia101@gmail.com
             </div>
           </SketchCard>
         </a>
@@ -174,7 +174,7 @@ export default function Contact() {
             LinkedIn Profile
           </a>
 
-          <a href="mailto:2k24.cs1a.2411680@gmail.com" className="glass-btn">
+          <a href="mailto:abhinavkanaujia101@gmail.com" className="glass-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />

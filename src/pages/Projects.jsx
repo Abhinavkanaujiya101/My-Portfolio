@@ -29,23 +29,23 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Desktop Assistant",
-      category: "System Automation Utility",
-      description: "An automated Python desktop assistant designed to perform basic and essential system tasks directly on your local screen. Features local screen automation, application launching, command processing, and desktop productivity task execution.",
-      techStack: ["Python", "OS Automation", "Desktop Scripts", "System APIs"],
-      repoUrl: "https://github.com/Abhinavkanaujiya101/Desktop-Assistant",
+      title: "GitBoy ⚡",
+      category: "Developer Analytics & Dashboard",
+      description: "A real-time GitHub activity and portfolio analytics dashboard transforming GitHub profiles into interactive visual metrics, 52-week contribution heatmaps, dynamic SVG stat badges, and open-source impact scoring.",
+      techStack: ["Next.js", "React", "Tailwind CSS", "Recharts", "GitHub REST/GraphQL API"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/GitBoy",
       liveUrl: null,
-      icon: "🤖",
+      icon: "⚡",
     },
     {
       id: 4,
-      title: "My Extension",
-      category: "Browser Extension & Dashboard",
-      description: "A high-performance glassmorphic dashboard extension built for Chrome and Edge. Features real-time power analytics, system CPU monitoring, glassmorphism UI styling, and customized web productivity utilities.",
-      techStack: ["JavaScript", "Chrome Extension API", "CSS3 Glassmorphism", "HTML5", "System Metrics"],
-      repoUrl: "https://github.com/Abhinavkanaujiya101/My-Extension",
+      title: "AlphaForge 📈",
+      category: "Quantitative Strategy & Backtesting",
+      description: "An intelligent quantitative research and backtesting wizard for financial markets (such as NIFTY 50 and NSE Indices). Features multi-step hypothesis formulation, strategy parameter definition, backtesting simulations, and trade insights.",
+      techStack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Financial Modeling"],
+      repoUrl: "https://github.com/Abhinavkanaujiya101/AlphaForge",
       liveUrl: null,
-      icon: "⚡",
+      icon: "📈",
     }
   ];
 
@@ -60,7 +60,7 @@ export default function Projects() {
           Featured <span className="text-gradient">Projects</span>
         </h1>
         <p style={{ maxWidth: '600px', margin: '0.5rem auto 0', color: 'var(--text-secondary)' }}>
-          A curated collection of full-stack web applications, AI gateways, desktop utilities, and browser tools.
+          A curated collection of full-stack web applications, AI gateways, developer analytics, and quantitative financial platforms.
         </p>
       </div>
 
