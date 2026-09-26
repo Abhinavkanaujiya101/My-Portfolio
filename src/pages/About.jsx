@@ -7,7 +7,7 @@ export default function About() {
     { title: "HackerRank 3★ Problem Solving Badge", desc: "3-Star Badge in Algorithmic Problem Solving & Data Structures", icon: "🌟" },
     { title: "Oracle Certified Cloud Associate", desc: "Oracle Cloud Infrastructure (OCI) Foundations", icon: "☁️" },
     { title: "Oracle Certified GenAI Associate", desc: "Generative AI Foundations & Architecture", icon: "🧠" },
-    { title: "LeetCode 150+ Problems", desc: "Optimized solutions across DSA, arrays, trees & dynamic programming", icon: "⚡" },
+    { title: "LeetCode 200+ Problems", desc: "Optimized solutions across DSA, arrays, trees, graphs & dynamic programming", icon: "⚡" },
   ];
 
   const education = [
@@ -174,7 +174,7 @@ export default function About() {
               lineHeight: '1.1',
               marginBottom: '0.5rem',
             }}>
-              150+
+              200+
             </div>
             <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>LeetCode Solved</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Data Structures & Algorithms</div>
