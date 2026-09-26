@@ -3,10 +3,9 @@ import SketchCard from '../components/SketchCard';
 
 export default function About() {
   const accomplishments = [
-    { title: "B.Tech in CSE", desc: "Pranveer Singh Institute of Technology, Kanpur (CGPA: 7.7)", icon: "🎓" },
+    { title: "HackerRank 5★ C++ Badge", desc: "5-Star Gold Badge in C++ Language Mastery & Problem Solving", icon: "⭐" },
     { title: "Oracle Certified Cloud Associate", desc: "Oracle Cloud Infrastructure (OCI) Foundations", icon: "☁️" },
     { title: "Oracle Certified GenAI Associate", desc: "Generative AI Foundations & Architecture", icon: "🧠" },
-    { title: "HackerRank 3★ Badges", desc: "Problem Solving & C++ Language Mastery", icon: "⭐" },
     { title: "LeetCode 150+ Problems", desc: "Optimized solutions across DSA, arrays, trees & dynamic programming", icon: "⚡" },
   ];
 
@@ -145,22 +144,22 @@ export default function About() {
         <h2 style={{ fontSize: '1.5rem', textAlign: 'center', color: '#FFFFFF', marginBottom: '1.75rem', fontWeight: '700' }}>
           Performance Metrics
         </h2>
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-4">
           <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
             <div style={{
               fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
               fontWeight: '800',
               fontFamily: 'var(--font-sans)',
-              background: 'var(--grad-primary)',
+              background: 'linear-gradient(135deg, #F59E0B 0%, #EF4444 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               lineHeight: '1.1',
               marginBottom: '0.5rem',
             }}>
-              7.7
+              5★
             </div>
-            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>B.Tech CGPA</div>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Computer Science & Eng.</div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>C++ HackerRank</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>5-Star Gold Badge</div>
           </SketchCard>
 
           <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
@@ -178,6 +177,23 @@ export default function About() {
             </div>
             <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>LeetCode Solved</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>Data Structures & Algorithms</div>
+          </SketchCard>
+
+          <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
+            <div style={{
+              fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
+              fontWeight: '800',
+              fontFamily: 'var(--font-sans)',
+              background: 'var(--grad-primary)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: '1.1',
+              marginBottom: '0.5rem',
+            }}>
+              7.7
+            </div>
+            <div style={{ color: '#FFFFFF', fontWeight: '600', fontSize: '0.95rem' }}>B.Tech CGPA</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.2rem' }}>PSIT Kanpur (CSE)</div>
           </SketchCard>
 
           <SketchCard style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>

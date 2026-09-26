@@ -8,7 +8,7 @@ export default function Skills() {
       icon: "💻",
       accentColor: "#6366F1",
       skills: [
-        { name: "C++ (OOP & Systems Architecture)", level: 90 },
+        { name: "C++ (5★ HackerRank Gold Badge & Systems)", level: 95 },
         { name: "C Language (Low-Level Systems)", level: 85 },
         { name: "Python (Intermediate & Scripting)", level: 75 },
       ]
