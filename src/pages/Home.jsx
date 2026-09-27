@@ -18,7 +18,7 @@ public:
         std::cout << "Name: Abhinav Kanaujiya\\n";
         std::cout << "Role: " << role << "\\n";
         std::cout << "Core: C++, DSA, React, Node.js\\n";
-        std::cout << "Projects: Apex OS, OmniBridge\\n";
+        std::cout << "Projects: Omnibridge, GitBoy\\n";
     }
 };
 
