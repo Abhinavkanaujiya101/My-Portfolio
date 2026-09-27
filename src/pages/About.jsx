@@ -1,5 +1,6 @@
 import React from 'react';
 import SketchCard from '../components/SketchCard';
+import profileImg from '../assets/profile.jpg';
 
 export default function About() {
   const accomplishments = [
@@ -53,35 +54,46 @@ export default function About() {
       <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '2rem', alignItems: 'start', marginBottom: '3.5rem' }} className="about-grid">
         {/* Left Side: Avatar Card */}
         <SketchCard glow={true} style={{ padding: '2.25rem 1.75rem', textAlign: 'center' }}>
-          <div style={{ position: 'relative', width: '130px', height: '130px', margin: '0 auto 1.5rem' }}>
+          <div style={{ position: 'relative', width: '145px', height: '145px', margin: '0 auto 1.5rem' }}>
             <div style={{
               width: '100%',
               height: '100%',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(56, 189, 248, 0.4) 100%)',
-              border: '2px solid rgba(165, 180, 252, 0.5)',
+              padding: '3px',
+              background: 'linear-gradient(135deg, #6366f1 0%, #38bdf8 50%, #8b5cf6 100%)',
+              boxShadow: '0 0 30px rgba(99, 102, 241, 0.4), 0 0 10px rgba(56, 189, 248, 0.25)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '2.75rem',
-              boxShadow: '0 0 25px rgba(99, 102, 241, 0.35)',
             }}>
-              👨‍💻
+              <img
+                src={profileImg}
+                alt="Abhinav Kanaujiya"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                  display: 'block',
+                }}
+              />
             </div>
             <div style={{
               position: 'absolute',
-              bottom: '4px',
-              right: '4px',
-              width: '24px',
-              height: '24px',
+              bottom: '5px',
+              right: '5px',
+              width: '26px',
+              height: '26px',
               borderRadius: '50%',
               background: '#0B0F19',
               border: '2px solid #10B981',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '0.65rem',
-            }}>
+              fontSize: '0.7rem',
+              boxShadow: '0 0 10px rgba(16, 185, 129, 0.6)',
+            }} title="Active & Available">
               ⚡
             </div>
           </div>

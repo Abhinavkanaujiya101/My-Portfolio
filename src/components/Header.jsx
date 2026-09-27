@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import profileImg from '../assets/profile.jpg';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,21 +47,29 @@ export default function Header() {
         {/* Brand Monogram / Logo */}
         <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div style={{
-            width: '34px',
-            height: '34px',
+            width: '36px',
+            height: '36px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(56, 189, 248, 0.3) 100%)',
-            border: '1px solid rgba(165, 180, 252, 0.4)',
+            padding: '1.5px',
+            background: 'linear-gradient(135deg, #6366f1 0%, #38bdf8 100%)',
+            boxShadow: '0 0 12px rgba(99, 102, 241, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontFamily: 'var(--font-mono)',
-            fontWeight: '700',
-            fontSize: '0.85rem',
-            color: '#FFFFFF',
-            boxShadow: '0 0 12px rgba(99, 102, 241, 0.3)',
+            overflow: 'hidden',
           }}>
-            AK
+            <img 
+              src={profileImg} 
+              alt="Abhinav Kanaujiya" 
+              style={{
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                display: 'block',
+              }}
+            />
           </div>
           <span style={{ 
             fontFamily: 'var(--font-sans)', 
