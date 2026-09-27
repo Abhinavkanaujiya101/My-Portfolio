@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SketchCard from '../components/SketchCard';
 import SketchButton from '../components/SketchButton';
-import profileImg from '../assets/profile.jpg';
 
 export default function Home() {
   const profileCppCode = `// abhinav@engine - profile.cpp
@@ -33,60 +32,8 @@ int main() {
     <div className="container" style={{ paddingTop: '3.5rem' }}>
       {/* Hero Header */}
       <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 3.5rem' }} className="fade-in">
-        {/* Profile Avatar Badge */}
-        <div style={{ display: 'inline-flex', position: 'relative', marginBottom: '1.75rem' }}>
-          <div style={{
-            position: 'relative',
-            width: '125px',
-            height: '125px',
-            margin: '0 auto',
-          }}>
-            <div style={{
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              padding: '3.5px',
-              background: 'linear-gradient(135deg, #6366f1 0%, #38bdf8 50%, #8b5cf6 100%)',
-              boxShadow: '0 0 35px rgba(99, 102, 241, 0.45), 0 0 15px rgba(56, 189, 248, 0.3)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <img
-                src={profileImg}
-                alt="Abhinav Kanaujiya"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                  display: 'block',
-                }}
-              />
-            </div>
-            <div style={{
-              position: 'absolute',
-              bottom: '4px',
-              right: '4px',
-              width: '26px',
-              height: '26px',
-              borderRadius: '50%',
-              background: '#0B0F19',
-              border: '2px solid #10B981',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '0.7rem',
-              boxShadow: '0 0 10px rgba(16, 185, 129, 0.6)',
-            }} title="Active & Available">
-              ⚡
-            </div>
-          </div>
-        </div>
-
         {/* Status Pill */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+        <div style={{ display: 'inline-flex', marginBottom: '1.5rem' }}>
           <div className="glass-pill" style={{ padding: '0.45rem 1.1rem', borderColor: 'rgba(99, 102, 241, 0.3)' }}>
             <span className="status-dot" />
             <span style={{ color: 'var(--text-bright)' }}>Available for Software Roles & Projects</span>
